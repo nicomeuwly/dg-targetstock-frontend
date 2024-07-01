@@ -99,6 +99,6 @@
 }
 
 header {
-  border-top: 10px solid;
+  border-top: 0.625rem solid;
   border-image: var(--header-gradient) 1;
 }
