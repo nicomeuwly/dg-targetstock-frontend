@@ -8,7 +8,7 @@ import { PrimaryButton } from "@/components/buttons";
 
 export function AccountMenu({ closeMenu }: { closeMenu: () => void }) {
     return (
-        <div className="absolute top-24 right-9 2xl:right-72 bg-light-grays-F5F5F5 w-fit p-6 flex flex-col gap-6">
+        <div className="absolute top-24 right-12 lg:right-24 xl:right-48 2xl:right-96 bg-light-grays-F5F5F5 w-fit p-6 flex flex-col gap-6">
             <div className="flex flex-row items-center justify-between">
                 <h3 className="font-semibold text-lg">Hello John</h3>
                 <PrimaryIcon icon="CloseIcon" disabled={false} clickHandler={closeMenu} />
@@ -49,7 +49,7 @@ export function LocationLanguageMenu({ closeMenu }: { closeMenu: () => void }) {
         closeMenu();
     }
     return (
-        <div className="flex flex-col gap-6 absolute top-20 right-32 2xl:right-96 w-fit h-fit bg-light-galaxus-page-background shadow-md p-6">
+        <div className="flex flex-col gap-6 absolute top-20 right-12 lg:right-24 xl:right-48 2xl:right-96 w-fit h-fit bg-light-galaxus-page-background shadow-md p-6">
             <Dropdown options={location} label="Location" onSelect={(option: string) => setLocationSelected(option)}/>
             <Dropdown options={language} label="Language" onSelect={(option: string) => setLanguageSelected(option)}/>
             <PrimaryButton label="Next" disabled={false} onClick={saveSettings} />

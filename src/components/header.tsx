@@ -23,7 +23,7 @@ export default function Header() {
         setShowAccountMenu(false);
     }, [pathname]);
     return (
-        <header className="w-screen h-24 bg-light-galaxus-page-background shadow-md flex flex-row justify-between px-9 2xl:px-72">
+        <header className="w-screen h-24 bg-light-galaxus-page-background shadow-md flex flex-row justify-between px-12 lg:px-24 xl:px-48 2xl:px-96">
             {showAccountMenu && <AccountMenu closeMenu={toggleAccountMenu} />}
             {showLocationLanguageMenu && <LocationLanguageMenu closeMenu={toggleLocationLanguageMenu} />}
             <Link className="flex flex-row gap-2 items-center" href="/">

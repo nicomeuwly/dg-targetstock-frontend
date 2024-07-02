@@ -27,9 +27,9 @@ export default function Footer() {
         setLocation(location);
     }, []);
     return (
-        <footer className="w-screen h-24 bg-light-grays-333333 flex flex-row justify-between py-7 px-9 2xl:px-72 absolute bottom-0 text-sm">
+        <footer className="w-screen h-24 bg-light-grays-333333 flex flex-row justify-between py-7 px-12 lg:px-24 xl:px-48 2xl:px-96 absolute bottom-0 text-sm">
             <p className="text-light-grays-FFFFFF flex items-center">Current location : <Link href="/target-stock/current-stock" className="text-light-transp-white-70 hover:text-light-grays-FFFFFF">{location}</Link></p>
-            <div className="w-48 flex flex-col absolute bottom-7 right-9 2xl:right-72">
+            <div className="w-48 flex flex-col absolute bottom-7 right-12 lg:right-24 xl:right-48 2xl:right-96">
                 {isOpen && <ul className="bg-light-galaxus-page-background w-48 border border-light-grays-B3B3B3">
                     {options.map((option) => (
                         <li key={options.indexOf(option)} onClick={() => saveTheme(option.name)} className={"h-fit flex flex-col cursor-pointer text-light-galaxus-body-copy-primary px-3 py-2 hover:bg-light-grays-F5F5F5 " + (selectedOption === option.name ? "font-semibold" : "font-normal")}>{option.name}<span className="text-light-galaxus-body-copy-secondary font-normal">{option.description}</span></li>

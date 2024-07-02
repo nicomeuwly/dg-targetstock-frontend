@@ -174,6 +174,65 @@ export function SortThumbIcon({ colorVar }: IconProps) {
     );
 }
 
+export function FutureStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="white" />
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#565656" />
+        </svg>
+
+    );
+}
+
+export function PastStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="white" />
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#565656" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M17.213 8L9.597 15.459L6.787 12.706L6 13.477L9.597 17L18 8.77L17.213 8Z" fill="black" />
+        </svg>
+    );
+}
+
+export function DoneStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="12" fill="#73C44D" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M17.213 8L9.597 15.459L6.787 12.706L6 13.477L9.597 17L18 8.77L17.213 8Z" fill="black" />
+        </svg>
+    );
+}
+
+export function WarningStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="12" fill="#EEB524" />
+            <path d="M12 15C12.553 15 13 15.447 13 16C13 16.553 12.553 17 12 17C11.447 17 11 16.553 11 16C11 15.447 11.447 15 12 15Z" fill="black" />
+            <path d="M13 13H11V7H13V13Z" fill="black" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12Z" fill="black" />
+        </svg>
+    );
+}
+
+export function ErrorStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="12" fill="#E86646" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M16.192 7.00049L11.95 11.2435L7.708 7.00049L7 7.70649L11.243 11.9495L7 16.1925L7.708 16.8995L11.95 12.6565L16.192 16.8995L16.899 16.1935V16.1915L12.657 11.9495L16.899 7.70749L16.192 7.00049Z" fill="black" />
+        </svg>
+    );
+}
+
+export function CurrentStepIcon() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="white" />
+            <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#565656" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M14.05 7.5L13.343 8.215L17.086 11.995H5V13.004H17.086L13.343 16.786L14.05 17.5L18.293 13.215L19 12.499L14.05 7.5Z" fill="black" />
+        </svg>
+    );
+}
+
 export function SystemModeIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
