@@ -1,24 +1,36 @@
 "use client";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { PrimaryIcon, AccountIcon } from "@/components/iconsButtons";
 import Link from "next/link";
-import { AccountMenu } from "@/components/modals";
+import { AccountMenu, LocationLanguageMenu } from "@/components/modals";
 
 export default function Header() {
     const [showAccountMenu, setShowAccountMenu] = useState(false);
+    const [showLocationLanguageMenu, setShowLocationLanguageMenu] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter()
 
     const toggleAccountMenu = () => {
         setShowAccountMenu(!showAccountMenu);
     };
+
+    const toggleLocationLanguageMenu = () => {
+        setShowLocationLanguageMenu(!showLocationLanguageMenu);
+    };
+
+    useEffect(() => {
+        setShowAccountMenu(false);
+    }, [pathname]);
     return (
         <header className="w-screen h-24 bg-light-galaxus-page-background shadow-md flex flex-row justify-between px-9 2xl:px-72">
             {showAccountMenu && <AccountMenu closeMenu={toggleAccountMenu} />}
+            {showLocationLanguageMenu && <LocationLanguageMenu closeMenu={toggleLocationLanguageMenu} />}
             <Link className="flex flex-row gap-2 items-center" href="/">
                 <img src="/images/logos/digitec.svg" alt="Digitec Logo" className="h-7" />
                 <div className="h-8 w-px bg-light-grays-000000"></div>
                 <img src="/images/logos/galaxus.svg" alt="Galaxus Logo" className="h-7" />
-                <h1 className="font-bold text-xl py-1">Target Stock</h1>
+                <h1 className="font-['europa'] font-bold text-xl py-1">Target Stock</h1>
             </Link>
             <ul className="flex flex-row gap-8">
                 {HeaderElement("Dashboard", "/target-stock/dashboard")}
@@ -26,8 +38,8 @@ export default function Header() {
                 {HeaderElement("Current stock", "/target-stock/current-stock")}
             </ul>
             <div className="flex items-center gap-4">
-                <PrimaryIcon icon="GlobeIcon" disabled={false} />
-                <PrimaryIcon icon="CogwheelIcon" disabled={false} />
+                <PrimaryIcon icon="GlobeIcon" disabled={false} clickHandler={toggleLocationLanguageMenu} />
+                <PrimaryIcon icon="CogwheelIcon" disabled={false} clickHandler={() => router.push('/settings')} />
                 <AccountIcon onClick={toggleAccountMenu} />
             </div>
         </header>
