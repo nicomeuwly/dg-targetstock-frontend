@@ -10,6 +10,14 @@ export function AddIcon({ colorVar }: IconProps) {
     );
 }
 
+export function ArrowLeftIcon({ colorVar }: IconProps) {
+    return (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M5.95 3.5L1 8.499L1.707 9.215L5.95 13.5L6.657 12.786L2.914 9.004H15V7.995H2.914L6.657 4.215L5.95 3.5Z" fill={`var(--${colorVar})`} />
+        </svg>
+    );
+}
+
 export function BinClosedIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -242,6 +250,8 @@ export function SystemModeIcon({ colorVar }: IconProps) {
 }
 
 const icons: { [key: string]: React.FC<IconProps> } = {
+    AddIcon,
+    ArrowLeftIcon,
     CogwheelIcon,
     CloseIcon,
     DarkModeIcon,

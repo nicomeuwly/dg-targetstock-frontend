@@ -102,3 +102,13 @@ header {
   border-top: 0.625rem solid;
   border-image: var(--header-gradient) 1;
 }
+
+.tooltip {
+  background-color: var(--light-grays-F5F5F5);
+  color: var(--light-galaxus-body-copy-primary);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px 0px #00000014;
+  box-shadow: 0px 0px 2px 0px #00000029;
+}

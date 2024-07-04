@@ -25,7 +25,7 @@ export function Dropdown({ options, label, onSelect }: DropdownProps) {
         <div className="w-48 flex flex-col gap-1">
             <p className="text-light-galaxus-body-copy-secondary">{label}</p>
             <div>
-                <button onClick={toggleDropdown} className={"w-full h-10 flex flex-row justify-between items-center border px-3 " + (isOpen ? "border-light-grays-565656" : "border-light-grays-B3B3B3")}>{selectedOption}{isOpen ? <ChevronUpIcon colorVar="light-transp-black-87" /> : <ChevronDownIcon colorVar="light-transp-black-87" />}</button>
+                <button type="button" onClick={toggleDropdown} className={"w-full h-10 flex flex-row justify-between items-center border px-3 " + (isOpen ? "border-light-grays-565656" : "border-light-grays-B3B3B3")}>{selectedOption}{isOpen ? <ChevronUpIcon colorVar="light-transp-black-87" /> : <ChevronDownIcon colorVar="light-transp-black-87" />}</button>
                 {isOpen && <ul className="absolute bg-light-galaxus-page-background w-48 border border-light-grays-B3B3B3">
                     {options.map((option) => (
                         <li key={options.indexOf(option)} onClick={() => handleOptionClick(option)} className={"h-10 flex items-center cursor-pointer text-light-galaxus-body-copy-secondary px-3 hover:bg-light-grays-F5F5F5 " + (selectedOption === option ? "font-semibold" : "font-normal")}>{option}</li>

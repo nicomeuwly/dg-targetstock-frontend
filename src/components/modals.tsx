@@ -49,7 +49,7 @@ export function LocationLanguageMenu({ closeMenu }: { closeMenu: () => void }) {
         closeMenu();
     }
     return (
-        <div className="flex flex-col gap-6 absolute top-20 right-12 lg:right-24 xl:right-48 2xl:right-96 w-fit h-fit bg-light-galaxus-page-background shadow-md p-6">
+        <div className="flex flex-col gap-6 absolute top-20 right-12 lg:right-24 xl:right-48 2xl:right-80 z-20 w-fit h-fit bg-light-galaxus-page-background shadow-md p-6">
             <Dropdown options={location} label="Location" onSelect={(option: string) => setLocationSelected(option)}/>
             <Dropdown options={language} label="Language" onSelect={(option: string) => setLanguageSelected(option)}/>
             <PrimaryButton label="Next" disabled={false} onClick={saveSettings} />

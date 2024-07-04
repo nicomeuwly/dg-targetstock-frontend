@@ -23,7 +23,7 @@ export default function Header() {
         setShowAccountMenu(false);
     }, [pathname]);
     return (
-        <header className="w-screen h-24 bg-light-galaxus-page-background shadow-md flex flex-row justify-between px-12 lg:px-24 xl:px-48 2xl:px-96">
+        <header className="w-screen h-24 bg-light-galaxus-page-background shadow-md flex flex-row justify-between px-12 lg:px-24 xl:px-48 2xl:px-80 fixed top-0">
             {showAccountMenu && <AccountMenu closeMenu={toggleAccountMenu} />}
             {showLocationLanguageMenu && <LocationLanguageMenu closeMenu={toggleLocationLanguageMenu} />}
             <Link className="flex flex-row gap-2 items-center" href="/">
@@ -38,9 +38,9 @@ export default function Header() {
                 {HeaderElement("Current stock", "/target-stock/current-stock")}
             </ul>
             <div className="flex items-center gap-4">
-                <PrimaryIcon icon="GlobeIcon" disabled={false} clickHandler={toggleLocationLanguageMenu} />
-                <PrimaryIcon icon="CogwheelIcon" disabled={false} clickHandler={() => router.push('/settings')} />
-                <AccountIcon onClick={toggleAccountMenu} />
+                <PrimaryIcon icon="GlobeIcon" disabled={false} clickHandler={toggleLocationLanguageMenu} tooltipText="Location Language Switcher "/>
+                <PrimaryIcon icon="CogwheelIcon" disabled={false} clickHandler={() => router.push('/settings')} tooltipText="General Settings"/>
+                <AccountIcon clickHandler={toggleAccountMenu} tooltipText="Account" icon="none" disabled={false}/>
             </div>
         </header>
     );
@@ -49,6 +49,6 @@ export default function Header() {
 function HeaderElement(text: string, link: string) {
     const currentLocation = usePathname();
     return (
-        <li className={"h-full border-b-4 text-sm text-light-galaxus-body-copy-primary hover:border-light-galaxus-blue-small-elements " + (currentLocation == link ? "border-light-galaxus-blue-small-elements" : "border-light-galaxus-page-background")}><Link href={link} className="h-full flex items-center">{text}</Link></li>
+        <li className={"h-full border-b-4 text-sm text-light-galaxus-body-copy-primary hover:border-light-galaxus-blue-small-elements " + (currentLocation.includes(link)  ? "border-light-galaxus-blue-small-elements" : "border-light-galaxus-page-background")}><Link href={link} className="h-full flex items-center">{text}</Link></li>
     );
 }
