@@ -252,6 +252,11 @@ export function SystemModeIcon({ colorVar }: IconProps) {
 const icons: { [key: string]: React.FC<IconProps> } = {
     AddIcon,
     ArrowLeftIcon,
+    BinClosedIcon,
+    BinOpenIcon,
+    ChevronDownIcon,
+    ChevronUpIcon,
+    ClockIcon,
     CogwheelIcon,
     CloseIcon,
     DarkModeIcon,

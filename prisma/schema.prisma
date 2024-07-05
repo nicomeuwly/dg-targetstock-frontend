@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Location {
+  id           String        @id @default(cuid())
+  name         String
+  targetStocks TargetStock[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@map("locations")
+}
+
+model TargetStock {
+  id         String    @id @default(cuid())
+  location   Location  @relation(fields: [locationId], references: [id])
+  locationId String
+  startDate  DateTime
+  endDate    DateTime
+  status     String
+  products   Product[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@map("target_stocks")
+}
+
+model Product {
+  id            String      @id @default(cuid())
+  imageUrl      String
+  catorgory     String
+  categoryUrl   String
+  brand         String
+  name          String
+  price         Float
+  productUrl    String
+  productId     Int
+  quantity      Int
+  targetStock   TargetStock @relation(fields: [targetStockId], references: [id])
+  targetStockId String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("products")
+}
+
+model Criteria {
+  id        String     @id @default(cuid())
+  name      String
+  sortId    Int
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("criterias")
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  mainCateg String
+  url       String
+  status    String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("categories")
+}

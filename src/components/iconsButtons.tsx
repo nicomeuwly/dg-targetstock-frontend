@@ -33,18 +33,27 @@ export function PrimaryIcon({ icon, disabled, clickHandler, tooltipText }: IconP
 }
 
 export function SecondaryIcon({ icon, disabled, clickHandler, tooltipText, text }: IconProps) {
-    const IconComponent = icons[icon];
+    let iconSVG = icon;
+    let IconComponent = icons[icon];
     const [colorVar, setColorVar] = useState("light-galaxus-blue-text");
 
     const handleMouseEnter = () => {
         setColorVar("light-galaxus-blue-link-hover");
+        if (iconSVG === "BinClosedIcon") {
+            iconSVG = "BinOpenIcon";
+            IconComponent = icons[iconSVG];
+        };
     }
     const handleMouseLeave = () => {
         setColorVar("light-galaxus-blue-text");
+        if (iconSVG === "BinOpenIcon") {
+            iconSVG = "BinClosedIcon";
+            IconComponent = icons[iconSVG];
+        };
     }
     return (
         <>
-            <button data-tooltip-id="icon-tooltip-2" data-tooltip-content={tooltipText} data-tooltip-place="top" data-tooltip-offset={4} type="button" onClick={clickHandler} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-row justify-center gap-2 text-sm text-light-galaxus-blue-text hover:text-light-galaxus-blue-link-hover">
+            <button data-tooltip-id="icon-tooltip-2" data-tooltip-content={tooltipText} data-tooltip-place="top" type="button" onClick={clickHandler} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-row justify-center gap-2 text-sm text-light-galaxus-blue-text hover:text-light-galaxus-blue-link-hover">
                 {icon === "none" ? null : <IconComponent colorVar={colorVar} />}
                 {text ? text : null}
             </button>

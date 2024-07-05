@@ -1,9 +1,36 @@
+"use client";
 import ContentLayout from "@/components/contentLayout";
 import NewStockProcess from "@/components/newStockProcess";
+import ProductTile from "@/components/productTile";
 import ToolBar from "@/components/toolBar";
+
+import { useEffect, useState } from "react";
 
 export default function AutomaticMethodPage() {
   const status: number[] = [2, 1, 0];
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [viewType, setViewType] = useState("thumb");
+
+  const getProducts = async () => {
+    try {
+      const response = await fetch("/api/products");
+      const data = await response.json();
+      setProducts(data);
+      setLoading(false);
+    } catch (error: any) {
+      console.error(error);
+    }
+  };
+
+  function handleDataFromChild(data: string) {
+    setViewType(data);
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <ContentLayout>
       {{
@@ -16,7 +43,12 @@ export default function AutomaticMethodPage() {
         subtitle: "List of products",
         content: (
           <>
-            <ToolBar />
+            <ToolBar isLoading={loading} totalProducts={products.length} sendDataToParent={handleDataFromChild} backButton={true}/>
+            <div className={"flex " + (viewType === "thumb" ? "flex-row flex-wrap gap-y-4 mt-4" : "flex-col")}>
+              {products.map((product, index) => (
+                <ProductTile key={index} product={product} viewType={viewType} isFirst={index % 3 === 0} isLast={(index + 1) % 3 === 0} />
+              ))}
+            </div>
           </>
         )
       }}

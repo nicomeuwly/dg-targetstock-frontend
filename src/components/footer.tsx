@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Light");
-    const [location, setLocation] = useState("Basel");
+    const [location, setLocation] = useState("");
 
     const options = [{ name: "Light", description: "Always use light mode" }, { name: "Dark", description: "Always use dark mode" }, { name: "Automatic", description: "Use the settings from your device" }];
 
@@ -21,7 +21,7 @@ export default function Footer() {
     }
 
     useEffect(() => {
-        const location = localStorage.getItem("Location") || "Basel";
+        const location = localStorage.getItem("Location") || "";
         const theme = localStorage.getItem("Theme") || "Light";
         setSelectedOption(theme);
         setLocation(location);

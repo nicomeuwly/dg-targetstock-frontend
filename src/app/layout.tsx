@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/qvc1jad.css"></link>
       </head>
-      <body className="font-['canada-type-gibson'] min-h-screen absolute top-0 overflow-x-hidden">
+      <body className="font-['canada-type-gibson'] min-h-screen top-0 overflow-x-hidden flex flex-col justify-between">
         <Header />
         <main>{children}</main>
         <Footer />
