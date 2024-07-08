@@ -5,6 +5,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
+
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
@@ -21,15 +26,17 @@ model Location {
 }
 
 model TargetStock {
-  id         String    @id @default(cuid())
-  location   Location  @relation(fields: [locationId], references: [id])
-  locationId String
-  startDate  DateTime
-  endDate    DateTime
-  status     String
-  products   Product[]
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id                   String             @id @default(cuid())
+  name                 String
+  location             Location           @relation(fields: [locationId], references: [id])
+  locationId           String
+  startDate            DateTime
+  endDate              DateTime
+  status               String
+  products             Product[]
+  generationSettings   GenerationSettings[]
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
 
   @@map("target_stocks")
 }
@@ -44,6 +51,7 @@ model Product {
   price         Float
   productUrl    String
   productId     Int
+  status        String
   quantity      Int
   targetStock   TargetStock @relation(fields: [targetStockId], references: [id])
   targetStockId String
@@ -54,23 +62,39 @@ model Product {
 }
 
 model Criteria {
-  id        String     @id @default(cuid())
-  name      String
-  sortId    Int
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id                   String             @id @default(cuid())
+  name                 String
+  sortId               Int
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  GenerationSettings   GenerationSettings @relation(fields: [generationSettingsId], references: [id])
+  generationSettingsId String
 
   @@map("criterias")
 }
 
 model Category {
-  id        String     @id @default(cuid())
-  name      String
-  mainCateg String
-  url       String
-  status    String
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id                   String             @id @default(cuid())
+  name                 String
+  mainCateg            String
+  url                  String
+  status               String
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  GenerationSettings   GenerationSettings @relation(fields: [generationSettingsId], references: [id])
+  generationSettingsId String
 
   @@map("categories")
+}
+
+model GenerationSettings {
+  id             String        @id @default(cuid())
+  targetStocksId String
+  criteria       Criteria[]
+  categories     Category[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  TargetStock    TargetStock[]
+
+  @@map("generation_settings")
 }

@@ -10,7 +10,13 @@ interface ButtonProps {
 
 export function PrimaryButton ({ label, onClick, disabled }: ButtonProps) {
     return (
-        <button type="button" onClick={onClick} className={"flex flex-row justify-center items-center h-10 bg-light-grays-444444 px-4 border border-light-transp-black-20 text-light-grays-FFFFFF " + (disabled ? "cursor-not-allowed" : "cursor-pointer")}>{label}</button>
+        <button type="button" onClick={disabled ? () => {} : onClick} className={"min-w-32 flex flex-row justify-center items-center h-10 px-4 border text-sm border-light-transp-black-20 rounded-sm " + (disabled ? "cursor-not-allowed text-light-galaxus-body-copy-tertiary" : "cursor-pointer text-light-grays-FFFFFF bg-light-grays-444444 hover:bg-light-grays-000000 hover:border-light-grays-000000 active:bg-light-grays-444444 active:border-light-transp-black-20 active:shadow")}>{label}</button>
+    );
+}
+
+export function SecondaryButton ({ label, onClick, disabled }: ButtonProps) {
+    return (
+        <button type="button" onClick={disabled ? () => {} : onClick} className={"min-w-32 flex flex-row justify-center items-center h-10 px-4 border text-sm border-light-transp-black-20 rounded-sm " + (disabled ? "cursor-not-allowed text-light-galaxus-body-copy-tertiary" : "cursor-pointer text-light-galaxus-body-copy-primary bg-light-grays-EEEEEE hover:bg-light-grays-DDDDDD active:bg-light-grays-EEEEEE active:shadow")}>{label}</button>
     );
 }
 
