@@ -6,6 +6,8 @@ Table locations {
   id String [pk]
   name String [not null]
   targetStocks target_stocks [not null]
+  locationCriterias location_criterias [not null]
+  locationCategories location_categories [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
 }
@@ -13,13 +15,23 @@ Table locations {
 Table target_stocks {
   id String [pk]
   name String [not null]
-  location locations [not null]
-  locationId String [not null]
   startDate DateTime [not null]
   endDate DateTime [not null]
   status String [not null]
-  products products [not null]
-  generationSettings generation_settings [not null]
+  Location locations [not null]
+  locationId String [not null]
+  stockProducts stock_products [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table stock_products {
+  id String [pk]
+  product products [not null]
+  productId String [not null]
+  targetStock target_stocks [not null]
+  targetStockId String [not null]
+  quantity Int [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
 }
@@ -35,9 +47,7 @@ Table products {
   productUrl String [not null]
   productId Int [not null]
   status String [not null]
-  quantity Int [not null]
-  targetStock target_stocks [not null]
-  targetStockId String [not null]
+  stockProducts stock_products [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
 }
@@ -46,10 +56,19 @@ Table criterias {
   id String [pk]
   name String [not null]
   sortId Int [not null]
+  locationCriterias location_criterias [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
-  GenerationSettings generation_settings [not null]
-  generationSettingsId String [not null]
+}
+
+Table location_criterias {
+  id String [pk]
+  location locations [not null]
+  locationId String [not null]
+  criteria criterias [not null]
+  criteriaId String [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
 }
 
 Table categories {
@@ -58,31 +77,31 @@ Table categories {
   mainCateg String [not null]
   url String [not null]
   status String [not null]
+  locationCategories location_categories [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
-  GenerationSettings generation_settings [not null]
-  generationSettingsId String [not null]
 }
 
-Table generation_settings {
+Table location_categories {
   id String [pk]
-  targetStocksId String [not null]
-  criteria criterias [not null]
-  categories categories [not null]
+  location locations [not null]
+  locationId String [not null]
+  category categories [not null]
+  categoryId String [not null]
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
-  TargetStock target_stocks [not null]
-}
-
-Table GenerationSettingsToTargetStock {
-  generationsettingsId String [ref: > generation_settings.id]
-  targetstockId String [ref: > target_stocks.id]
 }
 
 Ref: target_stocks.locationId > locations.id
 
-Ref: products.targetStockId > target_stocks.id
+Ref: stock_products.productId > products.id
 
-Ref: criterias.generationSettingsId > generation_settings.id
+Ref: stock_products.targetStockId > target_stocks.id
 
-Ref: categories.generationSettingsId > generation_settings.id
+Ref: location_criterias.locationId > locations.id
+
+Ref: location_criterias.criteriaId > criterias.id
+
+Ref: location_categories.locationId > locations.id
+
+Ref: location_categories.categoryId > categories.id
