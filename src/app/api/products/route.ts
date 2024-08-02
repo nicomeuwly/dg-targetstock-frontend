@@ -1,46 +1,52 @@
 export async function GET() {
     const data = [
         {
-            "brand": "Maurten",
-            "product": "Gel 100",
-            "details": "",
-            "price": "44.90 ",
-            "imageURL": "/im/productimages/3/4/0/6/0/6/7/4/0/6/6/3/5/6/7/6/5/3/6/666ace18-20d2-44d0-a559-c6d06bd34776_cropped.jpg?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "Apple",
+            "product": "iPhone 15",
+            "details": "128 GB, Blue, 6.10\", SIM + eSIM, 48 Mpx, 5G",
+            "price": 709,
+            "imageURL": "/im/productimages/2/1/2/0/6/3/5/0/2/7/0/3/2/9/4/3/5/5/8/ff8fbf16-cd09-48b7-8f4d-84e234fa488b.jpg?impolicy=product&resizeWidth=320",
+            "category": "Smartphones"
         },
         {
-            "brand": "Nutriathletic",
-            "product": "Collagen",
-            "details": "Neutre, 1 pcs, 700 g",
-            "price": "59.– ",
-            "imageURL": "/im/productimages/2/7/8/6/0/7/4/4/9/3/3/8/3/0/9/4/5/4/0/447d9c7c-7ea1-4e63-b500-0aa10502eaff_cropped.jpg?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "LEGO",
+            "product": "Mercedes-Benz G 500 PROFESSIONAL Line",
+            "details": "42177, LEGO Technic",
+            "price": 195,
+            "imageURL": "/im/productimages/9/1/6/4/4/7/9/9/6/7/3/4/9/8/0/4/1/7/6/8cd7e0d1-1a79-42fb-8357-c83569b0e737.png?impolicy=product&resizeWidth=320",
+            "category": "LEGO"
         },
         {
-            "brand": "Dymatize",
-            "product": "Iso 100",
-            "details": "",
-            "price": "84.– ",
-            "imageURL": "/im/productimages/8/1/0/0/0/1/7/5/6/5/1/8/7/6/5/9/4/9/7/caf3adf1-4d26-46a6-b9d0-3bfeebc0a219_cropped.jpg?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "Onyx",
+            "product": "Boox Note Air 3 C",
+            "details": "10.31\", 64 GB, Cosmic Black",
+            "price": 530,
+            "imageURL": "/im/productimages/7/0/3/8/2/7/3/8/8/9/3/6/6/2/7/6/8/6/4/2a9b6872-617c-4fb5-826f-ec988d72fbc9_cropped.jpg?impolicy=product&resizeWidth=320",
+            "category": "eReaders"
         },
         {
-            "brand": "Sponser",
-            "product": "Whey Isolate 94",
-            "details": "Vanille, 1 pcs, 1500 g",
-            "price": "78.90 ",
-            "imageURL": "/im/productimages/8/7/7/8/2/3/7/2/7/9/0/2/5/4/7/0/1/3/4/9017ef46-0584-4112-b86f-b4ceeb7fd2e6_cropped.jpg?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "Pampers",
+            "product": "Premium Protection",
+            "details": "Size 4, Monthly box, 174 Piece",
+            "price": 48.40,
+            "imageURL": "/im/productimages/4/6/2/5/3/1/4/4/5/0/5/2/4/6/2/3/3/9/0/99b41047-a91e-4c49-8881-7d2740ede972_cropped.jpg?impolicy=product&resizeWidth=320",
+            "category": "Diapers"
         },
         {
-            "brand": "Nutriathletic",
-            "product": "Whey Protein Isolate",
-            "details": "Chocolat suisse, 1 pcs, 800 g",
-            "price": "59.– ",
-            "imageURL": "/im/productimages/4/4/9/8/0/2/3/3/0/3/0/5/7/0/9/6/1/4/7/101c8205-d2c4-4c44-81be-6a9e31e4519c_cropped.jpg?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "Swiffer",
+            "product": "Trap & Lock Dusting Refills",
+            "details": "20 pcs.",
+            "price": 18.90,
+            "imageURL": "/im/productimages/6/2/6/4/8/7/3/2/9/7/8/8/0/5/1/3/7/6/8975f4f0-09b1-405e-9484-0dda06a3fa5c_cropped.jpg?impolicy=product&resizeWidth=320",
+            "category": "Cleaning utensils"
         },
         {
-            "brand": "Sponser",
-            "product": "Whey Isolate 94",
-            "details": "Neutre, 1 pcs, 1500 g",
-            "price": "85.90 ",
-            "imageURL": "/im/productimages/9/1/1/6/3/0/8/8/8/9/0/4/5/2/8/6/9/3/2/9058d515-77e9-4e19-af80-e6d78478bed0_cropped.png?impolicy=ProductTileImage&resizeWidth=314&resizeHeight=314&cropWidth=314&cropHeight=314"
+            "brand": "Stadler Form",
+            "product": "Leo",
+            "details": "57 dB",
+            "price": 93.70,
+            "imageURL": "/im/productimages/6/6/0/6/0/2/6/0/5/3/2/2/8/0/5/6/3/7/4/ea4d9c3a-5398-4e12-a63d-677c72c4c351_cropped.jpg?impolicy=product&resizeWidth=320",
+            "category": "Fan"
         },];
     return new Response(JSON.stringify(data), {
         status: 200,
