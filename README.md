@@ -71,7 +71,7 @@ Ensure you have the following installed on your machine:
 ## Project Structure
 
 ```
-/target-stock-management
+/dg-targetstock-frontend 
 │
 ├── prisma                  # Prisma schema
 │   ├── dbml                # Schema used in [dbdiagram.io](https://dbdiagram.io/)
