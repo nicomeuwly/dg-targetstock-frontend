@@ -3,6 +3,15 @@ import icons from "@/components/iconsSVG";
 import { useState } from "react";
 import { Tooltip } from 'react-tooltip'
 
+/**
+ * Props for the Icon components.
+ * @typedef {Object} IconProps
+ * @property {string} icon - The name of the icon.
+ * @property {boolean} disabled - Indicates if the icon is disabled.
+ * @property {string} [text] - Optional text to display alongside the icon (for SecondaryIcon).
+ * @property {function} [clickHandler] - Optional click handler function for the icon.
+ * @property {string} [tooltipText] - Optional tooltip text to display on hover.
+ */
 type IconProps = {
     icon: string;
     disabled: boolean;
@@ -11,6 +20,11 @@ type IconProps = {
     tooltipText?: string;
 };
 
+/**
+ * PrimaryIcon component renders a button with an icon and optional tooltip.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered PrimaryIcon component.
+ */
 export function PrimaryIcon({ icon, disabled, clickHandler, tooltipText }: IconProps) {
     const IconComponent = icons[icon];
     const [colorVar, setColorVar] = useState("light-grays-565656");
@@ -32,6 +46,12 @@ export function PrimaryIcon({ icon, disabled, clickHandler, tooltipText }: IconP
     );
 }
 
+/**
+ * SecondaryIcon component renders a button with an icon and optional text and tooltip.
+ * Changes the icon on hover for specific icons.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SecondaryIcon component.
+ */
 export function SecondaryIcon({ icon, disabled, clickHandler, tooltipText, text }: IconProps) {
     let iconSVG = icon;
     let IconComponent = icons[icon];
@@ -62,6 +82,11 @@ export function SecondaryIcon({ icon, disabled, clickHandler, tooltipText, text 
     );
 }
 
+/**
+ * AccountIcon component renders a button with an account icon (avatar) and optional tooltip.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered AccountIcon component.
+ */
 export function AccountIcon({ icon, disabled, clickHandler, tooltipText }: IconProps) {
     return (
         <>

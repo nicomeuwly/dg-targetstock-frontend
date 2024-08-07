@@ -1,5 +1,10 @@
 import ContentLayout from "@/components/contentLayout";
 
+/**
+ * SettingsPage component renders the general settings page for the application.
+ * It provides descriptions and explanations for the settings available.
+ * @returns {JSX.Element} The rendered SettingsPage component.
+ */
 export default function SettingsPage() {
   return (
     <ContentLayout>

@@ -2,6 +2,11 @@ import { TileButton } from "@/components/buttons";
 import ContentLayout from "@/components/contentLayout";
 import NewStockProcess from "@/components/newStockProcess";
 
+/**
+ * NewStockPage component renders the page for creating new stock.
+ * It uses the ContentLayout component for structured content presentation.
+ * @returns {JSX.Element} The rendered NewStockPage component.
+ */
 export default function NewStockPage() {
   const status: number[] = [1, 0, 0];
   return (

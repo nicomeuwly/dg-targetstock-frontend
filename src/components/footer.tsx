@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { ChevronUpIcon, ChevronDownIcon, LightModeIcon, DarkModeIcon, SystemModeIcon } from "@/components/iconsSVG";
 import Link from "next/link";
 
+/**
+ * Footer component
+ * Renders the footer section with location and theme selection options.
+ */
 export default function Footer() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Light");
@@ -10,10 +14,17 @@ export default function Footer() {
 
     const options = [{ name: "Light", description: "Always use light mode" }, { name: "Dark", description: "Always use dark mode" }, { name: "Automatic", description: "Use the settings from your device" }];
 
+    /**
+     * Toggles the dropdown menu for theme selection.
+     */
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
+    /**
+     * Saves the selected theme to local storage and updates the state.
+     * @param {string} option - The selected theme option.
+     */
     const saveTheme = (option: string) => {
         localStorage.setItem("Theme", option);
         setSelectedOption(option);

@@ -5,11 +5,20 @@ import ProductTile from "@/components/productTile";
 import ToolBar from "@/components/toolBar";
 import { useState } from "react";
 
+/**
+ * ManualMethodPage component renders the manual method page for creating new stock.
+ * It allows users to add products manually to the product list and displays the list.
+ * @returns {JSX.Element} The rendered ManualMethodPage component.
+ */
 export default function ManualMethodPage() {
   const status: number[] = [2, 1, 0];
   const [viewType, setViewType] = useState("thumb");
   const [products, setProducts] = useState([]);
 
+  /**
+   * Handles data received from the child component to update the view type.
+   * @param {string} data - The view type data sent from the child component.
+   */
   function handleDataFromChild(data: string) {
     setViewType(data);
   }

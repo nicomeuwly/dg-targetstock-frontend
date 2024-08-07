@@ -4,6 +4,12 @@ interface NewStockProcessProps {
     status: number[];
 }
 
+/**
+ * NewStockProcess component renders a series of step icons based on the provided status array.
+ * Each status corresponds to a specific icon representing the step's state.
+ * @param {NewStockProcessProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered NewStockProcess component.
+ */
 export default function NewStockProcess({ status }: NewStockProcessProps) {
     const steps = [<FutureStepIcon />, <CurrentStepIcon />, <DoneStepIcon />, <PastStepIcon />, <ErrorStepIcon />, <WarningStepIcon />]
 

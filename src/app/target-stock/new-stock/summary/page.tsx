@@ -5,7 +5,12 @@ import NewStockProcess from "@/components/newStockProcess";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function AutomaticMetdodPage() {
+/**
+ * SummaryPage component renders the summary page for new stock.
+ * It displays the summary of the product list and provides navigation buttons.
+ * @returns {JSX.Element} The rendered SummaryPage component.
+ */
+export default function SummaryPage() {
   const status: number[] = [2, 2, 1];
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

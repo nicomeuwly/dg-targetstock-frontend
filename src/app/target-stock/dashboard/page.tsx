@@ -1,5 +1,10 @@
 import ContentLayout from "@/components/contentLayout";
 
+/**
+ * DashboardPage component renders the dashboard page.
+ * It uses the ContentLayout component for structured content presentation.
+ * @returns {JSX.Element} The rendered DashboardPage component.
+ */
 export default function DashboardPage() {
   return (
     <ContentLayout>

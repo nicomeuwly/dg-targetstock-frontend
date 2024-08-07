@@ -6,12 +6,23 @@ interface ContentLayoutProps {
     title: string;
     process?: ReactNode;
     description?: string[];
-    button?: {label: string; onClick: () => void; disabled: boolean;};
+    button?: { label: string; onClick: () => void; disabled: boolean; };
     subtitle?: string;
     content: ReactNode;
   };
 }
 
+/**
+ * ContentLayout component
+ * Renders a layout structure for the content, including title, process, description, button, subtitle, and main content.
+ * @param {ContentLayoutProps} props - The properties object.
+ * @param {string} props.children.title - The main title of the content.
+ * @param {ReactNode} [props.children.process] - The process component to display alongside the title.
+ * @param {string[]} [props.children.description] - An array of description paragraphs to display.
+ * @param {{label: string; onClick: () => void; disabled: boolean;}} [props.children.button] - An optional button to display.
+ * @param {string} [props.children.subtitle] - The subtitle of the content section.
+ * @param {ReactNode} props.children.content - The main content to display.
+ */
 export default function ContentLayout({ children }: ContentLayoutProps) {
   return (
     <div className="mx-12 lg:mx-24 xl:mx-48 2xl:mx-80 mb-9 mt-36">

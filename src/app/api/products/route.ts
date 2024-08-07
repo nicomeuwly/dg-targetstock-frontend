@@ -1,3 +1,7 @@
+/**
+ * Handles the GET request to fetch a list of products.
+ * @returns {Response} The response object containing the list of products in JSON format.
+ */
 export async function GET() {
     const data = [
         {

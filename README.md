@@ -1,37 +1,128 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Target stock automation project
+
+This project is part of a Bachelor's thesis in Media Engineering at HEIG-VD, in collaboration with Digitec Galaxus AG. The aim of the project is to automate the target stock of Digitec shops. The target stock is a set of products available for purchase directly in the shops. This repository handles the front-end of the solution and is still at an early stage of development. 
+
+## Table of contents
+
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Database Schema](#database-schema)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+These instructions will help you set up and run the project on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- Node.js (v20 or higher)
+- npm (v10 or higher)
+- SQLite (for database)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/nicomeuwly/dg-targetstock-frontend.git
+   cd dg-targetstock-frontend
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Set up the environment variables:**
+
+   Create a `.env` file in the root directory and add the following:
+
+   ```env
+   DATABASE_URL="file:./dev.db"
+   ```
+
+4. **Run database migrations:**
+
+   ```sh
+   npx prisma migrate dev --name init
+   ```
+
+5. **Seed the database (optional):**
+
+   ```sh
+   npx ts-node prisma/seed.ts
+   ```
+
+6. **Start the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+   The application should now be running on [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+```
+/target-stock-management
+│
+├── prisma                  # Prisma schema
+│   ├── dbml                # Schema used in [dbdiagram.io](https://dbdiagram.io/)
+│   └── schema.prisma       # Prisma schema file
+│
+├── public                  # Static files
+│   └── images              # Images used in the project
+│
+├── src
+│   ├── components          # React components
+│   ├── app                 # Next.js pages and api routes
+│   └── lib                 # Initialise the Prisma Client
+│
+├── package.json            # Project metadata and dependencies
+└── README.md               # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Database Schema
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project uses Prisma ORM with SQLite. The database schema is defined in `prisma/schema.prisma`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Models
 
-## Learn More
+- **Location**
+- **TargetStock**
+- **StockProduct**
+- **Product**
+- **Criteria**
+- **LocationCriteria**
+- **Category**
+- **LocationCategory**
 
-To learn more about Next.js, take a look at the following resources:
+## API Endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project must include several API endpoints for managing data. (Only one at the moment)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Frontend:**
+  - React
+  - Next.js
+  - Tailwind CSS
+  - React-Tooltip
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Backend:**
+  - Node.js
+  - Prisma ORM
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# dg-targetstock-frontend
+- **Database:**
+  - SQLite
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

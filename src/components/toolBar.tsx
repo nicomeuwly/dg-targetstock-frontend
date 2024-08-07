@@ -13,10 +13,20 @@ interface ToolBarProps {
     backButton: boolean;
 }
 
+/**
+ * ToolBar component renders a toolbar with various icons, a back button, 
+ * and information about the total products and location.
+ * @param {ToolBarProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ToolBar component.
+ */
 export default function ToolBar({ isLoading, totalProducts, sendDataToParent, disabled, backButton }: ToolBarProps) {
     const [location, setLocation] = useState("No location selected");
     const router = useRouter();
 
+    /**
+     * Handles data sent from the child component and forwards it to the parent.
+     * @param {string} data - The data sent from the child component.
+     */
     function handleDataFromChild(data: string) {
         sendDataToParent(data);
     }
@@ -31,7 +41,7 @@ export default function ToolBar({ isLoading, totalProducts, sendDataToParent, di
         <div className="w-full border-b border-light-transp-black-20 py-2 flex flex-row items-center">
             <div className="flex flex-row items-center basis-1/4">
                 {backButton ? <><SecondaryIcon icon="ArrowLeftIcon" disabled={false} text="Back" clickHandler={() => router.back()} />
-                <div className="h-6 w-px bg-light-transp-black-20 ml-4 mr-2"></div></> : null}
+                    <div className="h-6 w-px bg-light-transp-black-20 ml-4 mr-2"></div></> : null}
                 <div className="flex flex-row">
                     <PrimaryIcon icon="AddIcon" disabled={false} tooltipText="Add a product" />
                     <PrimaryIcon icon="BinClosedIcon" disabled={disabled ? disabled : false} tooltipText="Delete all products" />
@@ -40,7 +50,7 @@ export default function ToolBar({ isLoading, totalProducts, sendDataToParent, di
                 </div>
             </div>
             <p className="basis-2/4 text-center">{isLoading ? "Loading..." : `${location} | ${totalProducts} products`}</p>
-            <ChangeViewType sendDataToParent={handleDataFromChild} disabled={disabled ? disabled : false}/>
+            <ChangeViewType sendDataToParent={handleDataFromChild} disabled={disabled ? disabled : false} />
         </div>
     );
 }
@@ -50,11 +60,21 @@ interface ChangeViewTypeProps {
     disabled?: boolean;
 }
 
+/**
+ * ChangeViewType component renders two icons to switch between "thumb" and "list" view types.
+ * It communicates the selected view type to the parent component.
+ * @param {ChangeViewTypeProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ChangeViewType component.
+ */
 function ChangeViewType({ sendDataToParent, disabled }: ChangeViewTypeProps) {
     const [viewType, setViewType] = useState("thumb");
     const [colorThumb, setColorThumb] = useState("light-grays-565656");
     const [colorList, setColorList] = useState("light-grays-565656");
 
+    /**
+     * Handles the click event to change the view type.
+     * @param {string} type - The selected view type.
+     */
     function handleClick(type: string) {
         if (disabled) return;
         setViewType(type);

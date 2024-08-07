@@ -4,9 +4,13 @@ import NewStockProcess from "@/components/newStockProcess";
 import ProductTile from "@/components/productTile";
 import ToolBar from "@/components/toolBar";
 import { useRouter } from "next/navigation";
-
 import { useEffect, useState } from "react";
 
+/**
+ * AutomaticMethodPage component renders the automatic method page for creating new stock.
+ * It fetches the product list, displays it, and provides navigation buttons.
+ * @returns {JSX.Element} The rendered AutomaticMethodPage component.
+ */
 export default function AutomaticMethodPage() {
   const status: number[] = [2, 1, 0];
   const router = useRouter();
@@ -14,6 +18,9 @@ export default function AutomaticMethodPage() {
   const [loading, setLoading] = useState(true);
   const [viewType, setViewType] = useState("thumb");
 
+  /**
+   * Fetches the product list from the API.
+   */
   const getProducts = async () => {
     try {
       const response = await fetch("/api/products");
@@ -25,6 +32,10 @@ export default function AutomaticMethodPage() {
     }
   };
 
+  /**
+   * Handles data received from the child component to update the view type.
+   * @param {string} data - The view type data sent from the child component.
+   */
   function handleDataFromChild(data: string) {
     setViewType(data);
   }
@@ -46,7 +57,7 @@ export default function AutomaticMethodPage() {
         subtitle: "List of products",
         content: (
           <>
-            <ToolBar isLoading={loading} totalProducts={products.length} sendDataToParent={handleDataFromChild} backButton={true}/>
+            <ToolBar isLoading={loading} totalProducts={products.length} sendDataToParent={handleDataFromChild} backButton={true} />
             <div className={"flex " + (viewType === "thumb" ? "flex-row flex-wrap gap-y-4 mt-4" : "flex-col")}>
               {products.map((product, index) => (
                 <ProductTile key={index} product={product} viewType={viewType} isFirst={index % 3 === 0} isLast={(index + 1) % 3 === 0} />

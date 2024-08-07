@@ -2,6 +2,11 @@ type IconProps = {
     colorVar: string;
 };
 
+/**
+ * AddIcon component renders an "add" SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered AddIcon component.
+ */
 export function AddIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,6 +15,11 @@ export function AddIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * ArrowLeftIcon component renders a left arrow SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ArrowLeftIcon component.
+ */
 export function ArrowLeftIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,6 +28,11 @@ export function ArrowLeftIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * BinClosedIcon component renders a closed bin SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered BinClosedIcon component.
+ */
 export function BinClosedIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,6 +41,11 @@ export function BinClosedIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * BinOpenIcon component renders an open bin SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered BinOpenIcon component.
+ */
 export function BinOpenIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,6 +55,11 @@ export function BinOpenIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * ChevronDownIcon component renders a downward chevron SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ChevronDownIcon component.
+ */
 export function ChevronDownIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,6 +68,11 @@ export function ChevronDownIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * ChevronUpIcon component renders an upward chevron SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ChevronUpIcon component.
+ */
 export function ChevronUpIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,6 +81,11 @@ export function ChevronUpIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * ClockIcon component renders a clock SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ClockIcon component.
+ */
 export function ClockIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,6 +94,11 @@ export function ClockIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * CogwheelIcon component renders a cogwheel SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered CogwheelIcon component.
+ */
 export function CogwheelIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,6 +107,11 @@ export function CogwheelIcon({ colorVar }: IconProps) {
     )
 }
 
+/**
+ * CloseIcon component renders a close (X) SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered CloseIcon component.
+ */
 export function CloseIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +120,11 @@ export function CloseIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * DarkModeIcon component renders a dark mode SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered DarkModeIcon component.
+ */
 export function DarkModeIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +133,11 @@ export function DarkModeIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * ExternalLink component renders an external link SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ExternalLink component.
+ */
 export function ExternalLink({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,6 +146,11 @@ export function ExternalLink({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * GlobeIcon component renders a globe SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered GlobeIcon component.
+ */
 export function GlobeIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,6 +159,11 @@ export function GlobeIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * LightModeIcon component renders a light mode SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered LightModeIcon component.
+ */
 export function LightModeIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,6 +180,11 @@ export function LightModeIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * LockIcon component renders a lock SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered LockIcon component.
+ */
 export function LockIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,6 +196,11 @@ export function LockIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * MultipleSelectionIcon component renders a multiple selection SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered MultipleSelectionIcon component.
+ */
 export function MultipleSelectionIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,6 +209,11 @@ export function MultipleSelectionIcon({ colorVar }: IconProps) {
     )
 }
 
+/**
+ * PencilIcon component renders a pencil (edit) SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered PencilIcon component.
+ */
 export function PencilIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,6 +222,11 @@ export function PencilIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * SelectAllIcon component renders a select all SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SelectAllIcon component.
+ */
 export function SelectAllIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,6 +251,11 @@ export function SelectAllIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * SortListIcon component renders a sort list SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SortListIcon component.
+ */
 export function SortListIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,6 +264,11 @@ export function SortListIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * SortThumbIcon component renders a sort thumbnail SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SortThumbIcon component.
+ */
 export function SortThumbIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,6 +277,11 @@ export function SortThumbIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * FutureStepIcon component renders a future step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered FutureStepIcon component.
+ */
 export function FutureStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -192,6 +292,11 @@ export function FutureStepIcon() {
     );
 }
 
+/**
+ * PastStepIcon component renders a past step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered PastStepIcon component.
+ */
 export function PastStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,6 +307,11 @@ export function PastStepIcon() {
     );
 }
 
+/**
+ * DoneStepIcon component renders a completed step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered DoneStepIcon component.
+ */
 export function DoneStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,6 +321,11 @@ export function DoneStepIcon() {
     );
 }
 
+/**
+ * WarningStepIcon component renders a warning step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered WarningStepIcon component.
+ */
 export function WarningStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,6 +337,11 @@ export function WarningStepIcon() {
     );
 }
 
+/**
+ * ErrorStepIcon component renders an error step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered ErrorStepIcon component.
+ */
 export function ErrorStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,6 +351,11 @@ export function ErrorStepIcon() {
     );
 }
 
+/**
+ * CurrentStepIcon component renders a current step indicator SVG icon.
+ * This icon does not accept color properties as it is a static icon.
+ * @returns {JSX.Element} The rendered CurrentStepIcon component.
+ */
 export function CurrentStepIcon() {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,6 +366,11 @@ export function CurrentStepIcon() {
     );
 }
 
+/**
+ * SystemModeIcon component renders a system mode SVG icon with a specified color.
+ * @param {IconProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SystemModeIcon component.
+ */
 export function SystemModeIcon({ colorVar }: IconProps) {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,6 +379,9 @@ export function SystemModeIcon({ colorVar }: IconProps) {
     );
 }
 
+/**
+ * Exporting all the icon components as a single object.
+ */
 const icons: { [key: string]: React.FC<IconProps> } = {
     AddIcon,
     ArrowLeftIcon,

@@ -8,14 +8,26 @@ interface DropdownProps {
     onSelect: (option: string) => void;
 }
 
+/**
+ * Dropdown component renders a dropdown menu with selectable options.
+ * @param {DropdownProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered Dropdown component.
+ */
 export function Dropdown({ options, label, onSelect }: DropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(localStorage.getItem(label) || options[0]);
 
+    /**
+     * Toggles the visibility of the dropdown menu.
+     */
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
+    /**
+     * Handles the selection of an option.
+     * @param {string} option - The selected option.
+     */
     const handleOptionClick = (option: string): void => {
         setSelectedOption(option);
         setIsOpen(false);

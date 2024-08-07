@@ -6,6 +6,13 @@ import { useState } from "react";
 import { Dropdown } from "@/components/inputs";
 import { PrimaryButton } from "@/components/buttons";
 
+/**
+ * AccountMenu component renders the user account menu with links to manage app access,
+ * view history of changes, and log out. 
+ * @param {Object} props - The properties for the component.
+ * @param {Function} props.closeMenu - Function to close the menu.
+ * @returns {JSX.Element} The rendered AccountMenu component.
+ */
 export function AccountMenu({ closeMenu }: { closeMenu: () => void }) {
     return (
         <div className="absolute top-24 right-12 lg:right-24 xl:right-48 2xl:right-80 bg-light-grays-F5F5F5 w-fit p-6 flex flex-col gap-6">
@@ -29,6 +36,11 @@ interface MenuLinkProps {
     closeMenu: () => void;
 }
 
+/**
+ * MenuLink component renders a navigation link with an optional icon.
+ * @param {MenuLinkProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered MenuLink component.
+ */
 function MenuLink({ url, text, icon, closeMenu }: MenuLinkProps) {
     const [colorVar, setColorVar] = useState("light-galaxus-body-copy-primary");
     const linkIcon = icon && icon === "lock" ? <LockIcon colorVar={colorVar} /> : icon && icon === "clock" ? <ClockIcon colorVar={colorVar} /> : null;
@@ -37,12 +49,22 @@ function MenuLink({ url, text, icon, closeMenu }: MenuLinkProps) {
     );
 }
 
+/**
+ * LocationLanguageMenu component renders a menu to select location and language settings.
+ * The selected settings are saved in localStorage and the page is reloaded on save.
+ * @param {Object} props - The properties for the component.
+ * @param {Function} props.closeMenu - Function to close the menu.
+ * @returns {JSX.Element} The rendered LocationLanguageMenu component.
+ */
 export function LocationLanguageMenu({ closeMenu }: { closeMenu: () => void }) {
     const location: string[] = ["Basel", "Bern", "Dietikon", "Geneva", "Kriens", "Lausanne", "St Gallen", "Winterthur", "Wohlen", "Zurich"];
     const language = ["Deutsch", "English", "Français", "Italiano"];
     const [locationSelected, setLocationSelected] = useState(localStorage.getItem("Location") || "Basel");
     const [languageSelected, setLanguageSelected] = useState(localStorage.getItem("Language") || "Deutsch");
 
+    /**
+     * Saves the selected settings to localStorage and reloads the page.
+     */
     const saveSettings = () => {
         localStorage.setItem("Location", locationSelected);
         localStorage.setItem("Language", languageSelected);
@@ -51,8 +73,8 @@ export function LocationLanguageMenu({ closeMenu }: { closeMenu: () => void }) {
     }
     return (
         <div className="flex flex-col gap-6 absolute top-20 right-12 lg:right-24 xl:right-48 2xl:right-80 z-20 w-fit h-fit bg-light-galaxus-page-background shadow-md p-6">
-            <Dropdown options={location} label="Location" onSelect={(option: string) => setLocationSelected(option)}/>
-            <Dropdown options={language} label="Language" onSelect={(option: string) => setLanguageSelected(option)}/>
+            <Dropdown options={location} label="Location" onSelect={(option: string) => setLocationSelected(option)} />
+            <Dropdown options={language} label="Language" onSelect={(option: string) => setLanguageSelected(option)} />
             <PrimaryButton label="Next" disabled={false} onClick={saveSettings} />
         </div>
     );

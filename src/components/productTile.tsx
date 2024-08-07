@@ -16,9 +16,19 @@ interface ProductTileProps {
     isLast: boolean;
 }
 
+/**
+ * ProductTile component renders a product card with details such as brand, product name, 
+ * price, and image. It supports two view types: "thumb" and "list". On hover, additional 
+ * icons for actions (remove, edit, open) are displayed.
+ * @param {ProductTileProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered ProductTile component.
+ */
 export default function ProductTile({ product, viewType, isFirst, isLast }: ProductTileProps) {
     const [isHovered, setIsHovered] = useState(false);
 
+    /**
+     * Toggles the hover state.
+     */
     const handleHover = () => {
         setIsHovered(!isHovered);
     }

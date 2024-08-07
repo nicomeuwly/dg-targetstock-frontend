@@ -4,10 +4,19 @@ import ProductTile from "@/components/productTile";
 import ToolBar from "@/components/toolBar";
 import { useState } from "react";
 
+/**
+ * CurrentStockPage component renders the page for managing the current stock.
+ * It allows users to view and modify the list of products in the current target stock.
+ * @returns {JSX.Element} The rendered CurrentStockPage component.
+ */
 export default function CurrentStockPage() {
   const [viewType, setViewType] = useState("thumb");
   const [products, setProducts] = useState([]);
 
+  /**
+   * Handles data received from the child component to update the view type.
+   * @param {string} data - The view type data sent from the child component.
+   */
   function handleDataFromChild(data: string) {
     setViewType(data);
   }
@@ -22,7 +31,7 @@ export default function CurrentStockPage() {
         subtitle: "List of products",
         content: (
           <>
-            <ToolBar isLoading={false} totalProducts={products.length} sendDataToParent={handleDataFromChild} disabled={products.length == 0 ? true : false} backButton={false}/>
+            <ToolBar isLoading={false} totalProducts={products.length} sendDataToParent={handleDataFromChild} disabled={products.length == 0 ? true : false} backButton={false} />
             {products.length == 0 ? <div className="w-full flex flex-col items-center mt-10">
               <p className="text-sm font-semibold">There are currently no products on the list.</p>
               <p className="text-sm">You need to add products to display a list.</p>

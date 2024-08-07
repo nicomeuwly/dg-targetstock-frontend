@@ -1,5 +1,10 @@
 import ContentLayout from "@/components/contentLayout";
 
+/**
+ * ChangesHistoryPage component renders the page showing the history of changes made to the target stock.
+ * It provides descriptions and a list of changes.
+ * @returns {JSX.Element} The rendered ChangesHistoryPage component.
+ */
 export default function ChangesHistoryPage() {
   return (
     <ContentLayout>
