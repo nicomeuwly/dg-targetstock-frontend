@@ -1,6 +1,6 @@
 # Target stock automation project
 
-This project is part of a Bachelor's thesis in Media Engineering at HEIG-VD, in collaboration with Digitec Galaxus AG. The aim of the project is to automate the target stock of Digitec shops. The target stock is a set of products available for purchase directly in the shops. This repository handles the front-end of the solution and is still at an early stage of development. 
+This project is part of a Bachelor's thesis in Media Engineering at HEIG-VD, in collaboration with Digitec Galaxus AG. The aim of the project is to automate the target stock of Digitec shops. The target stock is a set of products available for purchase directly in the shops. This repository handles the front-end of the solution and is still at an early stage of development. The back-end part of the solution can be found in this repository [github.com/nicomeuwly/dg-targetstock](https://github.com/nicomeuwly/dg-targetstock).
 
 ## Table of contents
 
